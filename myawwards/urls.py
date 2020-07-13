@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 router = routers.DefaultRouter()
-router.register('users',views.UserViewSet)
-router.register('posts',views.PostViewSet)
-router.register('profile',views.ProfileViewSet)
+router.register('users', views.UserViewSet)
+router.register('posts', views.PostViewSet)
+router.register('profile', views.ProfileViewSet)
 
 urlpatterns = [
     url('^$', views.index, name='index'),
@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^api-auth/',include('rest_framework.urls', namespace='rest_framework')),
     url(r'^profile/(?P<username>\w+)/settings', views.edit_profile, name='edit'),
     url(r'^profile/(?P<username>\w+)', views.profile, name='profile'),
-    url(r'^project/(?P<id>\d+)',views.project, name='project'),
+    url(r'^project/(?P<id>\d+)', views.project, name='project'),
     url(r'^search/$', views.search_project, name='search'),
 ]
 if settings.DEBUG:
