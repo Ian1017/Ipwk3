@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from .serializer import ProfileSerializer, UserSerializer, PostSerializer
 import random
+
 def index(request):
     if request.method == "POST":
         form = PostForm(request.POST)
