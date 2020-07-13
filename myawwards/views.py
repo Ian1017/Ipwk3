@@ -22,7 +22,9 @@ class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = ProfileSerializer
 
 
-# Create your views here.
-def index(request):
-    return render(request, 'awwards/index.html')
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
     
+# Create your views here.
+
